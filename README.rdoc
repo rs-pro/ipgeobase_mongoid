@@ -24,16 +24,16 @@ Russia and Ukraine geoip lookup with DB from http://ipgeobase.ru for Mongoid 2
 После того, как выполнены все предыдущие шаги можно искать регион по IP адресу:
 
 Работает только для РФ и Украины.
-
-    > Ipgeobase::find_region_by_ip('95.170.177.170')
+    > geo = Ipgeobase::find_region_by_ip('95.170.177.170')
+    > geo
     => #<IpgeobaseCity _id: 5059d68ee779891c72000201, _type: nil, geo_id: 1428, city: "Красноярск", region: "Красноярский край", district: "Сибирский федеральный округ", lat: 56.001251, lon: 92.88559, country_id: BSON::ObjectId('5059d68de779891c72000001')>
-    > Ipgeobase::find_region_by_ip('95.170.177.170').city
+    > geo.city
     => "Красноярск"
-    > Ipgeobase::find_region_by_ip('95.170.177.170').region
+    > geo.region
     => "Красноярский край"
-    > Ipgeobase::find_region_by_ip('95.170.177.170').district
+    > geo.district
     => "Сибирский федеральный округ"
-    > Ipgeobase::find_region_by_ip('95.170.177.170').country.name
+    > geo.country.name
     => "Россия"
-    > Ipgeobase::find_region_by_ip('95.170.177.170').country.code
+    > geo.country.code
     => "RU"
