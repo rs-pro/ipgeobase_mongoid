@@ -14,10 +14,12 @@ Russia and Ukraine geoip lookup with DB from http://ipgeobase.ru for Mongoid 2
 == Upload new database
 
 * Update cities and regions. Downloads file if it's not present in tmp/cities.txt
-  rake ipgeobase:cities
+
+    rake ipgeobase:cities
 
 * Update geo ips. Downloads file if it's not present in tmp/cidr_optim.txt
-  rake ipgeobase:ips
+
+    rake ipgeobase:ips
 
 == Methods
 
