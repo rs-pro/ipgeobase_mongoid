@@ -2,7 +2,7 @@
 
 Russia and Ukraine geoip lookup with DB from http://ipgeobase.ru for Mongoid 2
 
-Гем для работы с архивом с сайта http://ipgeobase.ru, содержащим базу местонахождений российских и украинских ip-адресов (с точностью до города) for Mongoid 2.
+Гем для работы с архивом с сайта http://ipgeobase.ru, содержащим базу местонахождений российских и украинских ip-адресов (с точностью до города) для MongoDB (Mongoid 2).
 
 == Installation
 
@@ -23,9 +23,11 @@ Russia and Ukraine geoip lookup with DB from http://ipgeobase.ru for Mongoid 2
 
 == Methods
 
-После того, как выполнены все предыдущие шаги можно искать регион по IP адресу:
+Search for city by IP (Russia and Ukraine only):
 
+После того, как выполнены все предыдущие шаги можно искать город по IP адресу:
 Работает только для РФ и Украины.
+
     > geo = Ipgeobase::find_region_by_ip('95.170.177.170')
     > pp geo
     => #<IpgeobaseCity _id: 5059d68ee779891c72000201, _type: nil, geo_id: 1428, city: "Красноярск",
