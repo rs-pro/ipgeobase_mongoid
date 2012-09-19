@@ -1,6 +1,7 @@
 = IPGeoBase
 
 Russia and Ukraine geoip lookup with DB from http://ipgeobase.ru for Mongoid 2
+
 Гем для работы с архивом с сайта http://ipgeobase.ru, содержащим базу местонахождений российских и украинских ip-адресов (с точностью до города) for Mongoid 2.
 
 == Installation
