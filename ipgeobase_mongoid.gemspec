@@ -9,7 +9,8 @@ Gem::Specification.new do |s|
   s.authors = ["GlebTv"]
   s.email = ["glebtv@gmail.com"]
   s.homepage = "https://github.com/rs-pro/ipgeobase_mongoid"
-  s.description = "IPGeoBase.ru for mongoid"
+  s.description = "IPGeoBase.ru for mongoid 2"
+  s.summary = "IPGeoBase.ru for mongoid 2"
 
   s.rubyforge_project = "ipgeobase_mongoid"
 
@@ -17,6 +18,7 @@ Gem::Specification.new do |s|
   s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   s.require_paths = ["lib"]
-
+  
+  s.add_dependency "mongoid", '~> 2.4'
   s.required_ruby_version = '>= 1.9.2'
 end
