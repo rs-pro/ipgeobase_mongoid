@@ -21,7 +21,11 @@ module Ipgeobase
     if ip.nil?
       nil
     else
-      ip.city
+      if ip.end_ip < long
+        nil
+      else
+        ip.city
+      end
     end
   end
 
