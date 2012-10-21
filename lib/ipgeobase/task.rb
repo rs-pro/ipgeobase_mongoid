@@ -4,14 +4,12 @@ module Ipgeobase
   module Task
     def self.obtain_content_by_filename(filename)
       file = ::Rails.root.join('tmp', filename)
-      if File.file? file
-        puts 'using local copy'
-        `iconv -f cp1251 -t utf8 #{file}`
-      else
+      unless File.exist? file
         puts 'downloading database'
         url = 'http://ipgeobase.ru/files/db/Main/geo_files.tar.gz'
-        `curl -0 #{url} | tar -xzO #{file} | iconv -f cp1251 -t utf8`
+        Kernel.system("curl #{url} | tar -xzOf - #{filename} | iconv -f cp1251 -t utf-8 > #{file}")
       end
+      File.read(file)
     end
   end
 end
