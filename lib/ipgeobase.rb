@@ -11,7 +11,7 @@ module Ipgeobase
   def self.find_region_by_ip(user_ip)
     raise ArgumentError, "IP address is expected" unless user_ip =~ /\A\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\Z/
     long = ip2long(user_ip)
-    ip = IpgeobaseIp.where(start_ip: { '$lte' => long }).order_by({ start_ip: -1 }).limit(1).first
+    ip = Ipgeobase::Ip.where(start_ip: { '$lte' => long }).order_by({ start_ip: -1 }).limit(1).first
     if ip.nil? or ip.end_ip < long
       nil
     else

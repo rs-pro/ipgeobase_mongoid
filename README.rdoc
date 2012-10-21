@@ -30,7 +30,7 @@ Search for city by IP (Russia and Ukraine only):
 
     > geo = Ipgeobase::find_region_by_ip('95.170.177.170')
     > pp geo
-    => #<IpgeobaseCity _id: 5059d68ee779891c72000201, _type: nil, geo_id: 1428, city: "Красноярск",
+    => #<Ipgeobase::City _id: 5059d68ee779891c72000201, _type: nil, geo_id: 1428, city: "Красноярск",
         region: "Красноярский край", district: "Сибирский федеральный округ", lat: 56.001251, lon: 92.88559,
         country_id: BSON::ObjectId('5059d68de779891c72000001')>
     > geo.city
