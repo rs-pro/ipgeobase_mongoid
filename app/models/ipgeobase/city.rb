@@ -4,7 +4,7 @@ module Ipgeobase
     include Mongoid::Document
 
     field :geo_id, type: Integer
-    index :geo_id, unique: true
+    index({geo_id: 1}, {unique: true})
 
     field :city, type: String
     field :region, type: String
@@ -12,7 +12,6 @@ module Ipgeobase
 
     field :lat, type: Float
     field :lon, type: Float
-
 
     belongs_to :country, class_name: 'Ipgeobase::Country'
     has_many :ips, class_name: 'Ipgeobase::Ip'

@@ -5,7 +5,7 @@ module Ipgeobase
     include Mongoid::Document
 
     field :start_ip, type: Integer
-    index :start_ip, unique: true
+    index({start_ip: 1}, {unique: true})
     field :end_ip, type: Integer
 
     belongs_to :city, class_name: 'Ipgeobase::City'
