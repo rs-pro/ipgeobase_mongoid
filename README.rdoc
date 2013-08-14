@@ -8,9 +8,12 @@ WARNING: 1.0 breaks backward compatibility. For mongoid 2 use ~> 0
 
 == Installation
 
-(1) Add to Gemfile:
+Add to Gemfile:
+
     gem "ipgeobase_mongoid"
-(2) Install required gems:
+
+Install required gems:
+
     bundle install
 
 == Upload new database
