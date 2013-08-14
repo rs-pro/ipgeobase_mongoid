@@ -6,7 +6,7 @@ module Ipgeobase
       if defined? Rails
         file = ::Rails.root.join('tmp', filename)
       else
-        file = File.join(File.dirname(__FILE__), 'tmp', filename)
+        file = File.join(File.dirname(__FILE__), '..', '..', 'tmp', filename)
       end
       unless File.exist? file
         puts 'downloading database'

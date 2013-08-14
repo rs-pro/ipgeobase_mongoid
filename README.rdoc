@@ -1,8 +1,10 @@
 = IPGeoBase
 
-Russia and Ukraine geoip lookup with DB from http://ipgeobase.ru for Mongoid 2
+Russia and Ukraine geoip lookup with DB from http://ipgeobase.ru for Mongoid 3/4
 
-Гем для работы с архивом с сайта http://ipgeobase.ru, содержащим базу местонахождений российских и украинских ip-адресов (с точностью до города) для MongoDB (Mongoid 2).
+WARNING: 1.0 breaks backward compatibility. For mongoid 2 use ~> 0
+
+Гем для работы с архивом с сайта http://ipgeobase.ru, содержащим базу местонахождений российских и украинских ip-адресов (с точностью до города) для MongoDB (Mongoid 3/4).
 
 == Installation
 
@@ -14,6 +16,7 @@ Russia and Ukraine geoip lookup with DB from http://ipgeobase.ru for Mongoid 2
 == Upload new database
 
 * Update cities and regions. Downloads file if it's not present in tmp/cities.txt
+* city id's are not changed on DB update and can be used as foreign keys
 
     rake ipgeobase:cities
 

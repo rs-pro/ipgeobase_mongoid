@@ -5,8 +5,7 @@ require "ipgeobase/task"
 namespace :ipgeobase do
   desc "Update cities and regions. Downloads file if it's not present in tmp/cities.txt"
   task :cities => :environment do
-    Ipgeobase::Ip.delete_all
-    Ipgeobase::City.delete_all
+    puts 'updating cities'
     russia = Ipgeobase::Country.find_or_create_by(name: 'Россия', code: 'RU')
     ukraine = Ipgeobase::Country.find_or_create_by(name: 'Украина', code: 'UA')
     content = Ipgeobase::Task.obtain_content_by_filename('cities.txt')
@@ -17,12 +16,15 @@ namespace :ipgeobase do
                 else
                   russia
                 end
-      Ipgeobase::City.create!(geo_id: options[0], city: options[1], region: options[2], district: options[3], lat: options[4], lon: options[5], country: country)
+      city = Ipgeobase::City.find_or_initialize_by(geo_id: options[0])
+      city.assign_attributes(city: options[1], region: options[2], district: options[3], lat: options[4], lon: options[5], country: country)
+      city.save!
     end
   end
 
   desc "Update geo ips. Downloads file if it's not present in tmp/cidr_optim.txt"
   task :ips => :environment do
+    puts 'updating ips'
     content = Ipgeobase::Task.obtain_content_by_filename('cidr_optim.txt')
     Ipgeobase::Ip.delete_all
     content.each_line do |c|
