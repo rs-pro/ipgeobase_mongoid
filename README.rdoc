@@ -19,9 +19,10 @@ Install required gems:
 == Upload new database
 
 * Update cities and regions. Downloads file if it's not present in tmp/cities.txt
-* city id's are not changed on DB update and can be used as foreign keys
 
     rake ipgeobase:cities
+
+* city id's are not changed on DB update and can be used as foreign keys
 
 * Update geo ips. Downloads file if it's not present in tmp/cidr_optim.txt
 
