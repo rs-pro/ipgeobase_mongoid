@@ -4,15 +4,13 @@ $:.push File.expand_path("../lib", __FILE__)
 require "ipgeobase/version"
 
 Gem::Specification.new do |s|
-  s.name = "ipgeobase_mongoid"
+  s.name = "rs_ipgeobase_mongoid"
   s.version = Ipgeobase::VERSION
   s.authors = ["GlebTv"]
   s.email = ["glebtv@gmail.com"]
   s.homepage = "https://github.com/rs-pro/ipgeobase_mongoid"
   s.description = "IPGeoBase.ru for mongoid 3/4"
   s.summary = "IPGeoBase.ru for mongoid 3/4"
-
-  s.rubyforge_project = "ipgeobase_mongoid"
 
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")

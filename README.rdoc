@@ -10,7 +10,7 @@ WARNING: 1.0 breaks backward compatibility. For mongoid 2 use ~> 0
 
 Add to Gemfile:
 
-    gem "ipgeobase_mongoid"
+    gem "rs_ipgeobase_mongoid"
 
 Install required gems:
 
