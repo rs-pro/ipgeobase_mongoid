@@ -22,6 +22,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency("rake")
   s.add_development_dependency("bundler")
-  s.add_development_dependency(%q<rspec>, [">= 2.14.0"])
-  s.add_development_dependency(%q<bundler>, [">= 1.0.21"])
+  s.add_development_dependency("rspec", [">= 2.14.0"])
 end
